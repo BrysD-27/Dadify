@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import API from '../api/api';
 
 const Admin = (username) => {
-	const [user, setUser] = useState([]);
+	const [users, setUsers] = useState([]);
 
 	const userSearchRequest = async (event) => {
 		event.preventDefault();
@@ -16,14 +16,21 @@ const Admin = (username) => {
 		}
 	}
 
+	useEffect( async function() {
+        try {
+            const data = await API.makeRequest('/users', 'GET');
+            setUsers(data);
+        } catch (error) {
+            throw error;
+        }
+    }, []);
+
 	return (
 		<div id="admin">
-			<h1>For The Admin Things</h1>
-			<Link to="/">Back to Home</Link>
-			<div>Create a new product</div>
-			<div>Delete a product</div>
-			<div>Edit a product</div>
-			<div><Link to="/adminusers">View User information</Link></div>
+			<h1>Admin</h1>
+			<div>
+
+			</div>
 		</div>
 	)
 }

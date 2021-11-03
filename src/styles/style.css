@@ -689,3 +689,7 @@ fieldset {
     width: 40%;
     height: 40%;
 }
+
+#admin {
+    display: flex;
+}

@@ -90,8 +90,7 @@ const Cart = ({loggedIn}) => {
 	return (
 		<div id="cart">
 			<div className='cart-header'>
-				<h1>For The Shopping Cart</h1>
-				<Link to="/">Back to Home</Link>
+				<h1>The Shopping Cart</h1>
 			</div>
 			<div className='cart-items'>
 				{cart.items ?

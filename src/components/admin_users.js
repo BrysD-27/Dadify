@@ -3,16 +3,6 @@ import {Link} from 'react-router-dom';
 import API from '../api/api';
 
 const AdminUsers = () => {
-    const [users, setUsers] = useState([]);
-
-    useEffect( async function() {
-        try {
-            const data = await API.makeRequest('/users', 'GET');
-            setUsers(data);
-        } catch (error) {
-            throw error;
-        }
-    }, []);
 
     return (
         <div id="userList">
