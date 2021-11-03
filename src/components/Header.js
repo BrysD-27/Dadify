@@ -10,13 +10,14 @@ const Header = ({loggedIn, setLoggedIn, isAdmin}) => {
 		localStorage.removeItem('cartId');
 		localStorage.removeItem('UserId');
 		localStorage.removeItem('Username');
-		setLoggedIn(null);
+		localStorage.removeItem('Admin');
+		setLoggedIn(false);
 		history.push('/')
 	}
 
 	return (
 		<header>
-			<h1>Dadify-Dot-Com</h1>
+			<h1>The Dads Abides</h1>
 			<div id="nav-bar">
                 <Link to="/" className="navItem">Home</Link>
 				<Link to="/products" className="navItem">Products</Link>
@@ -31,7 +32,7 @@ const Header = ({loggedIn, setLoggedIn, isAdmin}) => {
 					<>
 						<Link className="navItem" onClick={logOut}>Log Out</Link>
 					</>
-					: <Link to="/LogIn" className="navItem">Log In</Link>
+				: <Link to="/LogIn" className="navItem">Log In</Link>
 				}
 			</div>
 		</header>
